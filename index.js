@@ -1,4 +1,4 @@
-let contador = 1; // Começa com 2 já na tela
+let contador = 1; // Começa com 1 já na tela
 // ADICIONA SLOT DE CONGRUÊNCIA
 function adicionarCongruencia() {
   contador++;
@@ -106,10 +106,12 @@ function calculaCongruencia() {
     let m = parseInt(mField.value);
 
     if(m < 0) {
+      document.getElementById("resultado").innerHTML = "";
       mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
     }
 
     if (isNaN(a) || isNaN(b) || isNaN(m)) {
+      document.getElementById("resultado").innerHTML = "";
       mostrarMensagem("<strong>Não foi possível calcular:</strong> Preencha todos os campos da congruência.", "erro");
       return;
     }
@@ -118,6 +120,7 @@ function calculaCongruencia() {
       try {
         b = transformarCanonica(a, b, m);
       } catch (e) {
+        document.getElementById("resultado").innerHTML = "";
         mostrarMensagem(`<strong>Não foi possível calcular:</strong> Não foi possível transformar a congruência ${a}x ≡ ${b} (mod ${m}) para a forma canônica. Motivo: ${e.message}`, "erro");
         return;
       }
