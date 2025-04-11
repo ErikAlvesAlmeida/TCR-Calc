@@ -36,6 +36,9 @@ function mdc(a, b) {
 }
 // CALCULA O INVERSO DE UM NÚMERO
 function modInverse(a, m) {
+  if (mdc(a, m) !== 1) {
+    throw new Error(`Não existe inverso modular: MDC(${a}, ${m}) ≠ 1`);
+  }
   let m0 = m, x0 = 0, x1 = 1;
 
   while (a > 1) {
@@ -111,14 +114,23 @@ function calculaCongruencia() {
       return;
     }
     
-    if(m < 0) {
+    if (a === 0) {
       document.getElementById("resultado").innerHTML = "";
-      mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
+      mostrarMensagem("<strong>Erro:</strong> Coeficiente 'a' não pode ser zero.", "erro");
+      return;
     }
 
-    if(!(b % mdc(a, m) != 0)){
+    if(m <= 0) {
       document.getElementById("resultado").innerHTML = "";
-      mostrarMensagem("<strong>MDC(a,m) ∤ b!","erro");
+      mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
+      return;
+    }
+
+    if(b % mdc(a, m) !== 0){
+      document.getElementById("resultado").innerHTML = "";
+      const d = mdc(a,m)
+      mostrarMensagem("<strong>Não foi possível calcular: </strong>MDC("+a+","+m+") = "+d+" ∤ "+b+".","erro");
+      return;
     }
 
     if (a !== 1) {
@@ -130,11 +142,11 @@ function calculaCongruencia() {
         return;
       }
     }
-
     congruencias.push({ b, m });
   }
 
   if (!sãoCoprimos(congruencias)) {
+    document.getElementById("resultado").innerHTML = "";
     mostrarMensagem("<strong>Não foi possível calcular:</strong> Os módulos fornecidos não são coprimos entre si. O Teorema do Resto Chinês requer que todos os módulos sejam coprimos.", "erro");
     return;
   }
