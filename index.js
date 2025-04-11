@@ -165,8 +165,8 @@ function mostrarResultado({ resultado, M, passos, modulos }) {
 
   let explicacao = `
       <div class="mensagem sucesso">
-          <h2>Resultado Final Simplificado</h2>
-          <p><strong>x ≡ ${resultado} (mod ${M})</strong></p>
+          <h1>Resultado Final Simplificado</h1>
+          <h2><strong>x ≡ ${resultado} (mod ${M})</strong></h2>
       </div>
       
       <div class="mensagem info">
