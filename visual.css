@@ -21,7 +21,7 @@ body{
 .btn{
     padding: 8px 15px;
     height: 35px;
-    font-size: 1.5vh;
+    font-size: 1.86vh;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -63,13 +63,13 @@ body{
     margin-top: -10px;
     display: flex;
     margin-bottom: 3%;
-    margin-left: 23%;
+    margin-left: 21%;
 }
 
 #congruencias{
     align-items: center;
     text-align: center;
-    font-size: 1.8vh;
+    font-size: 1.7vh;
 }
 
 .remainder{
