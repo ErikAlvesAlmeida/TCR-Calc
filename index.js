@@ -126,13 +126,16 @@ function calculaCongruencia() {
       return;
     }
 
-    if(b % mdc(a, m) !== 0){
+    const d = mdc(a,m)
+    if(b % d !== 0){
       document.getElementById("resultado").innerHTML = "";
-      const d = mdc(a,m)
       mostrarMensagem("<strong>Não foi possível calcular: </strong>MDC("+a+","+m+") = "+d+" ∤ "+b+".","erro");
       return;
     }
 
+    a = a / d;
+    b = b / d;
+    m = m / d;
     if (a !== 1) {
       try {
         b = transformarCanonica(a, b, m);
@@ -162,7 +165,7 @@ function mostrarResultado({ resultado, M, passos, modulos }) {
 
   let explicacao = `
       <div class="mensagem sucesso">
-          <h2>Resultado Final</h2>
+          <h2>Resultado Final Simplificado</h2>
           <p><strong>x ≡ ${resultado} (mod ${M})</strong></p>
       </div>
       
