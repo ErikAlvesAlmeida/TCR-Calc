@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congruência linear</title>
+    <title>TCR-Calc</title>
     <link rel="stylesheet" href="visual.css" />
     <link herf = "font/Family.ttf">
     <script src="index.js" defer></script>
@@ -24,7 +24,7 @@
         <div id="congruencias">
             <div class="congruencia" id="congruencia-1">
             Congruência 1: 
-            <input type="number"  class="remainder" placeholder="a">
+            <input type="number" value="1" class="remainder" placeholder="a">
             x ≡ 
             <input type="number"  class="remainder" placeholder="b">
             (mod 
@@ -34,7 +34,8 @@
         <br>
         <div>
             <button onclick="calculaCongruencia()" class="btn calculate-btn">Calcular</button>
-        </div>
+        </div> 
+        <div id="resultado" class="chat-output"></div>
     </div>
 </body>
 </html>
