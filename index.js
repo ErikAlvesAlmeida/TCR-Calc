@@ -104,16 +104,21 @@ function calculaCongruencia() {
     let a = parseInt(aField.value);
     let b = parseInt(bField.value);
     let m = parseInt(mField.value);
-
+    
+    if (isNaN(a) || isNaN(b) || isNaN(m)) {
+      document.getElementById("resultado").innerHTML = "";
+      mostrarMensagem("<strong>Não foi possível calcular:</strong> Preencha todos os campos da congruência.", "erro");
+      return;
+    }
+    
     if(m < 0) {
       document.getElementById("resultado").innerHTML = "";
       mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
     }
 
-    if (isNaN(a) || isNaN(b) || isNaN(m)) {
+    if(!(mdc(a, m) % b === 0)){
       document.getElementById("resultado").innerHTML = "";
-      mostrarMensagem("<strong>Não foi possível calcular:</strong> Preencha todos os campos da congruência.", "erro");
-      return;
+      mostrarMensagem("<strong>MDC(a,m) ∤ b!","erro");
     }
 
     if (a !== 1) {
