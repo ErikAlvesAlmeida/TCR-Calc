@@ -105,6 +105,10 @@ function calculaCongruencia() {
     let b = parseInt(bField.value);
     let m = parseInt(mField.value);
 
+    if(m < 0) {
+      mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
+    }
+
     if (isNaN(a) || isNaN(b) || isNaN(m)) {
       mostrarMensagem("<strong>Não foi possível calcular:</strong> Preencha todos os campos da congruência.", "erro");
       return;
