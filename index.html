@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congruência linear</title>
+    <link rel="stylesheet" href="visual.css" />
+    <link herf = "font/Family.ttf">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="div-main">
+        <h1>Teorema do Resto Chinês</h1>
+        <hr>
+        
+        <div class="description">
+            <p>O Teorema do Resto Chinês resolve sistemas de congruências lineares simultâneas. Insira abaixo as congruências no formato <strong>x ≡ a (mod m)</strong>:</p>
+        </div>
+        
+        <div class="buttons">
+            <button onclick="adicionarCongruencia()" class="btn btnadd">+ Congruência</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="removerCongruencia()" class="btn btnremove">- Congruência</button>
+        </div>
+        <div id="congruencias">
+            <div class="congruencia" id="congruencia-1">
+            Congruência 1: 
+            <input type="number"  class="remainder" placeholder="a">
+            x ≡ 
+            <input type="number"  class="remainder" placeholder="b">
+            (mod 
+            <input type="number" class="remainder" placeholder="m">)
+            </div>
+        </div>  
+        <br>
+        <div>
+            <button onclick="calculaCongruencia()" class="btn calculate-btn">Calcular</button>
+        </div>
+    </div>
+</body>
+</html>
