@@ -116,7 +116,7 @@ function calculaCongruencia() {
       mostrarMensagem("<strong>Não é possível calcular um módulo negativo!","erro");
     }
 
-    if(!(b % mdc(a, m) === 0)){
+    if(!(b % mdc(a, m) != 0)){
       document.getElementById("resultado").innerHTML = "";
       mostrarMensagem("<strong>MDC(a,m) ∤ b!","erro");
     }
